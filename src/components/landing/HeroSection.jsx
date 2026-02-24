@@ -13,7 +13,7 @@ const HeroSection = () => {
         and stay organized, <span className="font-bold">so you focus on cracking interviews.</span>
       </p>
 
-      <div className="border flex sm:flex-row flex-col gap-4">
+      <div className="flex sm:flex-row flex-col gap-4">
         <div className="bg-purple-600 text-white px-6 py-3 shadow-md hover:bg-purple-700 transition">
           <Link
             to="/register"
