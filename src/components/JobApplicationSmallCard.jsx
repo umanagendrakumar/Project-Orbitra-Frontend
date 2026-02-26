@@ -3,7 +3,7 @@ import { statusColors } from "../utils/constants";
 const JobApplicationSmallCard = ({ application }) => {
 
     return (
-        <div className="w-64 shadow-md p-8 hover:scale-105 transition-transform duration-300">
+        <div className="border border-purple-200 w-64 shadow-md p-8 hover:scale-105 transition-transform duration-300">
             <h1 className="text-2xl font-bold mb-2 truncate">
                 {application?.companyName}
             </h1>
