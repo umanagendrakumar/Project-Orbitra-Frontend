@@ -12,9 +12,12 @@ const jobAppSlice = createSlice({
             if (index !== -1) {
                 state[index] = action.payload;
             }
+        },
+        clearJobApplications: () => {
+            return [];
         }
     }
 });
 
-export const { setJobApplications, updateJobApplication } = jobAppSlice.actions;
+export const { setJobApplications, updateJobApplication, clearJobApplications } = jobAppSlice.actions;
 export default jobAppSlice.reducer;
