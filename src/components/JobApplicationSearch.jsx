@@ -35,51 +35,54 @@ const JobApplicationSearch = () => {
 
 
     return (
-        <div className="max-w-6xl mx-auto my-6">
-            <div className="p-4 flex flex-col md:flex-row gap-4">
+        <div className="max-w-6xl mx-auto mt-6 mb-12">
+            <div className="flex flex-col gap-4">
 
                 {/* Search Input */}
                 <input
                     type="text"
-                    placeholder="Search by company, role..."
+                    placeholder="Search by company name, role, job ID, notes, source..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-purple-400 transition"
                 />
 
-                {/* Job Type Dropdown */}
-                <select
-                    value={selectedJobType}
-                    onChange={(e) => setSelectedJobType(e.target.value)}
-                    className="appearance-none border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                >
-                    <option value="">All Job Types</option>
-                    {jobTypes.map(type => (
-                        <option key={type} value={type}>{type}</option>
-                    ))}
-                </select>
+                <div className='flex flex-wrap gap-2'>
 
-                {/* Status Dropdown */}
-                <select
-                    value={selectedStatus}
-                    onChange={(e) => setSelectedStatus(e.target.value)}
-                    className="appearance-none border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                >
-                    <option value="">All Status</option>
-                    {applicationStatuses.map(status => (
-                        <option key={status} value={status}>{status}</option>
-                    ))}
-                </select>
+                    {/* Job Type Dropdown */}
+                    <select
+                        value={selectedJobType}
+                        onChange={(e) => setSelectedJobType(e.target.value)}
+                        className="appearance-none border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                    >
+                        <option value="">All Job Types</option>
+                        {jobTypes.map(type => (
+                            <option key={type} value={type}>{type}</option>
+                        ))}
+                    </select>
 
-                {/* Filter Dropdown */}
-                <select
-                    value={sortOrder}
-                    onChange={(e) => setSortOrder(e.target.value)}
-                    className="appearance-none border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                >
-                    <option value="DESC">Latest</option>
-                    <option value="ASC">Oldest</option>
-                </select>
+                    {/* Status Dropdown */}
+                    <select
+                        value={selectedStatus}
+                        onChange={(e) => setSelectedStatus(e.target.value)}
+                        className="appearance-none border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                    >
+                        <option value="">All Status</option>
+                        {applicationStatuses.map(status => (
+                            <option key={status} value={status}>{status}</option>
+                        ))}
+                    </select>
+
+                    {/* Filter Dropdown */}
+                    <select
+                        value={sortOrder}
+                        onChange={(e) => setSortOrder(e.target.value)}
+                        className="appearance-none border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                    >
+                        <option value="DESC">Latest</option>
+                        <option value="ASC">Oldest</option>
+                    </select>
+                </div>
 
             </div>
         </div>
