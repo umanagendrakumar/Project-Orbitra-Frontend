@@ -38,11 +38,11 @@ const JobApplicationFullCard = ({ jobApplication }) => {
     }
 
     return (
-        <div className="max-w-4xl mx-auto bg-white shadow-sm p-8 space-y-8">
+        <div className="w-full sm:w-xl bg-white shadow-sm p-8 space-y-8 text-center sm:text-left">
 
             {/* Header */}
-            <div className=" flex sm:flex-row flex-col sm:justify-between sm:items-center items-start gap-4">
-                <div className="">
+            <div className=" flex sm:flex-row flex-col sm:justify-between sm:items-center gap-4">
+                <div>
                     <h1 className="text-3xl font-bold">
                         {companyName}
                     </h1>
@@ -64,37 +64,42 @@ const JobApplicationFullCard = ({ jobApplication }) => {
             </div>
 
             {/* Links Section */}
-            <div className=" grid sm:grid-cols-2 gap-6">
-                {companyProfileLink && (
+            {
+                (companyProfileLink || applyLink) && (
 
-                    <div>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        {companyProfileLink && (
 
-                        <p className="text-sm text-gray-500">Company Profile</p>
-                        <a
-                            href={companyProfileLink}
-                            className="text-blue-600 hover:underline break-all"
-                        >
-                            {companyProfileLink}
-                        </a>
+                            <div>
 
+                                <p className="text-sm text-gray-500">Company Profile</p>
+                                <a
+                                    href={companyProfileLink}
+                                    className="text-blue-600 hover:underline break-all"
+                                >
+                                    {companyProfileLink}
+                                </a>
+
+                            </div>
+                        )
+                        }
+
+                        {applyLink && (
+
+                            <div>
+                                <p className="text-sm text-gray-500">Applied Link</p>
+                                <a
+                                    href={applyLink}
+                                    className="text-blue-600 hover:underline break-all"
+                                >
+                                    {applyLink}
+                                </a>
+                            </div>
+                        )
+                        }
                     </div>
                 )
-                }
-
-                {applyLink && (
-
-                    <div>
-                        <p className="text-sm text-gray-500">Applied Link</p>
-                        <a
-                            href={applyLink}
-                            className="text-blue-600 hover:underline break-all"
-                        >
-                            {applyLink}
-                        </a>
-                    </div>
-                )
-                }
-            </div>
+            }
 
             {/* Meta Information */}
             <div className="grid sm:grid-cols-2 gap-6">
@@ -118,13 +123,13 @@ const JobApplicationFullCard = ({ jobApplication }) => {
             {notes && (
                 <div>
                     <p className="text-sm text-gray-500 mb-2">Notes</p>
-                    <div className="bg-gray-100 p-4 text-gray-700">
+                    <div className="bg-gray-100 p-4 text-left text-gray-700">
                         {notes}
                     </div>
                 </div>
             )}
 
-            <div className="flex space-x-4">
+            <div className="flex justify-center sm:justify-normal space-x-4">
                 <Link to={`/job-application/patch/${id}`} className="w-20 text-center bg-blue-500 text-white px-4 py-2 cursor-pointer">
                     Edit
                 </Link>

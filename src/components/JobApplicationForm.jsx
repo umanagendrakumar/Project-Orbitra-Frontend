@@ -70,7 +70,7 @@ const JobApplicationForm = ({ isEdit, jobApplication }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto bg-white shadow-sm sm:p-8 p-4 space-y-8"
+      className="w-full sm:w-max bg-white p-8 mb-8 space-y-8"
     >
       <div className="grid sm:grid-cols-2 gap-6">
 
@@ -82,9 +82,9 @@ const JobApplicationForm = ({ isEdit, jobApplication }) => {
 
         <Select label="Job Type**" name="jobType" value={formData.jobType} onChange={handleChange} options={jobTypes} />
 
-        <Input label="Applied Link" name="applyLink" value={formData.applyLink} placeholder="paste valid link" onChange={handleChange} />
+        <Input label="Applied Link" name="applyLink" value={formData.applyLink} placeholder="https://paste_link" onChange={handleChange} />
 
-        <Input label="Company Profile Link" name="companyProfileLink" value={formData.companyProfileLink} placeholder="paste valid link" onChange={handleChange} />
+        <Input label="Company Profile Link" name="companyProfileLink" value={formData.companyProfileLink} placeholder="https://paste_link" onChange={handleChange} />
 
         <Select label="Status**" name="status" value={formData.status} onChange={handleChange} options={applicationStatuses} />
 

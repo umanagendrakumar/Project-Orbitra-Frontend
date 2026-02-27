@@ -8,7 +8,7 @@ const StatusHistory = () => {
   if (statusHistory.length === 0) return <p>No status history available.</p>;
 
   return (
-    <div className="max-w-4xl mx-auto bg-white border-t border-gray-300 pt-8">
+    <div className="max-w-4xl mx-auto text-left bg-white border-t border-gray-300 pt-8">
       <h2 className="text-xl font-bold mb-1">Status Change History</h2>
       <p className="text-gray-400 text-sm mb-6">Recent first</p>
 
