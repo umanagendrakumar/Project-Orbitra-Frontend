@@ -14,12 +14,14 @@ const Navbar = () => {
       <h1 className="text-3xl font-bold text-purple-600">Orbitra</h1>
       {
         <div className="relative">
+        {user &&
           <button
             className="text-2xl cursor-pointer p-2"
             onClick={() => setProfileVisible(!profileVisible)}
           >
             {profileVisible ? <RiMenuUnfold2Line /> : <RiMenuUnfoldLine />}
           </button>
+        }
 
           <div
             className={`absolute right-0 mt-2 bg-white shadow-md flex flex-col text-left p-4 z-50 ${profileVisible ? "block" : "hidden"
