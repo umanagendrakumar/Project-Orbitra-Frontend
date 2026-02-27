@@ -35,20 +35,17 @@ const JobApplicationDetails = () => {
   // console.log(jobApplication);
 
   return (
-    <>
-    <Navbar />
-    <div className="flex flex-col justify-center items-center min-h-screen p-6 pt-12">
-    
-
-      <h1 className="selection:bg-purple-500 selection:text-white sm:text-3xl text-2xl font-bold mb-8 text-center border-b border-gray-400 pb-1">
-        Job App Full Details
-      </h1>
-      { !jobApplication ? <p className="text-gray-500">Job application not found.</p> : <JobApplicationFullCard jobApplication={jobApplication} /> }
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-1 flex flex-col justify-center items-center p-6 pt-12">
+        <h1 className="selection:bg-purple-500 selection:text-white sm:text-3xl text-2xl font-bold mb-8 text-center border-b border-gray-400 pb-1">
+          Job App Full Details
+        </h1>
+        {!jobApplication ? <p className="text-gray-500">Job application not found.</p> : <JobApplicationFullCard jobApplication={jobApplication} />}
+      </div>
+      <Footer />
     </div>
-    <Footer />
 
-    </>
-    
   )
 }
 
