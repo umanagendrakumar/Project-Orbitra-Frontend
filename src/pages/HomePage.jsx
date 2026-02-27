@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setJobApplications } from "../store/jobAppSlice";
 import JobApplicationSearch from "../components/JobApplicationSearch";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
     const jobApplications = useSelector((store) => store.jobApplications);
@@ -26,7 +27,7 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className="h-screen flex flex-col overflow-hidden">
+        <div className="min-h-screen flex flex-col overflow-hidden">
             <Navbar />
 
             <div className="flex-1 flex flex-col justify-center items-center p-6 pt-12">
@@ -71,6 +72,8 @@ const HomePage = () => {
                     </div>
                 )}
             </div>
+
+            <Footer />
         </div>
     )
 
