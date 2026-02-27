@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from '../utils/axios';
+import { setUser } from "../store/userSlice";
+import { useDispatch } from "react-redux";
 
 const RegisterForm = () => {
     const [firstName, setFirstName] = useState("");
@@ -12,6 +14,7 @@ const RegisterForm = () => {
     const [error, setError] = useState("");
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
